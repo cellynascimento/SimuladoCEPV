@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Simulado | CEP V – Vasos Sanguíneos</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="container">
+  <header class="header">
+    <h1>Simulado CEP V – Vasos Sanguíneos</h1>
+    <div id="timer" class="badge">Tempo restante: 30:00</div>
+  </header>
+
+  <p>Teste seus conhecimentos com <strong>20 questões aleatórias</strong>.</p>
+
+  <!-- Tela inicial -->
+  <section id="start-screen">
+    <button id="start-btn" class="btn primary">Iniciar Simulado</button>
+    <p class="muted">Dica: você pode marcar uma alternativa e avançar; no final verá o gabarito completo.</p>
+  </section>
+
+  <!-- Área do quiz -->
+  <section id="quiz" class="hidden">
+    <div id="progress" class="muted"></div>
+    <h2 id="question-text">Pergunta aqui…</h2>
+    <ul id="options" class="options"></ul>
+    <div class="actions">
+      <button id="next-btn" class="btn">Próxima</button>
+    </div>
+  </section>
+
+  <!-- Tela final -->
+  <section id="end-screen" class="hidden">
+    <h2>Fim do Simulado</h2>
+    <p>Confira seu desempenho e o gabarito abaixo:</p>
+    <div id="score"></div>
+    <ol id="review"></ol>
+    <a class="btn outline" href="index.html">Voltar ao início</a>
+  </section>
+
+  <footer>© 2025 Simulado CEP V</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
