@@ -34,6 +34,43 @@ function iniciarCronometro() {
   }, 1000);
 }
 
+function letraFromIndex(i){ return String.fromCharCode(65 + i); } // 0→A, 1→B...
+function indexFromLetra(L){
+  if (typeof L !== "string") return -1;
+  const s = L.trim().toUpperCase();
+  return /^[A-Z]$/.test(s) ? (s.charCodeAt(0) - 65) : -1;
+}
+
+// Descobre o índice correto do gabarito (aceita letra "A-D", índice 0..n ou texto da alternativa)
+function resolveGabaritoIndex(q){
+  if (!Array.isArray(q.alternativas)) return -1;
+  if (typeof q.gabarito === "number") return q.gabarito;
+  if (typeof q.gabarito === "string"){
+    const s = q.gabarito.trim();
+    const byLetter = indexFromLetra(s);
+    if (byLetter >= 0) return byLetter;
+    const byText = q.alternativas.findIndex(a => String(a).trim() === s);
+    if (byText >= 0) return byText;
+  }
+  return -1;
+}
+
+// Converte a resposta do usuário para índice (aceita letra, índice ou texto)
+function resolveRespostaIndex(q, resp){
+  if (!Array.isArray(q.alternativas)) return -1;
+  if (typeof resp === "number") return resp;
+  if (typeof resp === "string"){
+    const s = resp.trim();
+    const byLetter = indexFromLetra(s);
+    if (byLetter >= 0) return byLetter;
+    const byText = q.alternativas.findIndex(a => String(a).trim() === s);
+    if (byText >= 0) return byText;
+    const asNum = Number(s);
+    if (!Number.isNaN(asNum)) return asNum;
+  }
+  return -1;
+}
+
 // ======= RENDERIZAÇÃO DE UMA QUESTÃO =======
 function render() {
   const q = perguntas[idx];
@@ -83,7 +120,36 @@ function render() {
     // Insere logo abaixo das alternativas (a UL está vazia mesmo)
     ul.parentNode.insertBefore(ta, ul.nextSibling);
 
-  } else {
+  } // ==== OBJETIVA (múltipla escolha) ====
+// Garante que as alternativas aparecem como radios e salvam o índice marcado
+ul.innerHTML = ""; // zera a UL caso venha de outra questão
+
+q.alternativas.forEach((textoAlt, iAlt) => {
+  const li = document.createElement("li");
+
+  const idRadio = `q${idx}-alt${iAlt}`;
+
+  const input = document.createElement("input");
+  input.type = "radio";
+  input.name = `q${idx}`;       // MESMO name para todas as alternativas da mesma questão
+  input.id = idRadio;
+  input.value = iAlt;           // valor = índice da alternativa
+  input.checked = (respostas[idx] === iAlt);
+
+  // >>> ESTE É O PONTO-CHAVE: salva o índice escolhido (0..n)
+  input.addEventListener("change", () => {
+    respostas[idx] = iAlt;
+  });
+
+  const label = document.createElement("label");
+  label.setAttribute("for", idRadio);
+  label.innerHTML = `<strong>${String.fromCharCode(65 + iAlt)})</strong> ${escapeHtml(textoAlt)}`;
+
+  li.appendChild(input);
+  li.appendChild(label);
+  ul.appendChild(li);
+});
+ {
     // Múltipla escolha (default)
     if (!Array.isArray(q.alternativas) || q.alternativas.length === 0) {
       mostrarErro("Questão de múltipla escolha sem 'alternativas'. Verifique o questions.json.");
