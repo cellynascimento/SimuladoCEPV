@@ -155,4 +155,7 @@ body {
   text-align: justify;
 }
 
+#review { list-style: none; padding-left: 0; }
+#review > li::marker { content: ""; }
+
 
