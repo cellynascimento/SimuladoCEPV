@@ -245,12 +245,19 @@ document.addEventListener("DOMContentLoaded", async () => {
     respostas = data.map(q => ((q.tipo || "").toLowerCase() === "dissertativa" ? "" : null));
     idx = 0;
 
-    $("#start-btn").addEventListener("click", () => {
-      $("#start-screen").classList.add("hidden");
-      $("#quiz").classList.remove("hidden");
-      iniciarCronometro();
-      render();
-    });
+   $("#start-btn").addEventListener("click", () => {
+  // Oculta o botão "Iniciar" após o clique
+  $("#start-btn").classList.add("hidden");
+  
+  // Oculta a tela inicial e mostra o quiz
+  $("#start-screen").classList.add("hidden");
+  $("#quiz").classList.remove("hidden");
+  
+  // Inicia o cronômetro e exibe a primeira questão
+  iniciarCronometro();
+  render();
+});
+
     $("#next-btn").addEventListener("click", proxima);
     $("#prev-btn").addEventListener("click", anterior);
     $("#finish-btn").addEventListener("click", () => finalizar());
