@@ -16,7 +16,7 @@
     {
     "pergunta": "Questão 3 - Indique as tonsilas apontadas por cada seta.",
     "imagem": "imagens/Questão3.png",
-    "tipo": "objetiva",
+    "tipo": "discursiva",
     "gabarito": "A - Tonsila faríngea; B - Tonsila tubária; C - Tonsilas palatinas; D - Tonsilas linguais",
     "aceitaveis": [[, "tonsila", "tonsilas", "faringea", "tubaria", "palatinas", "linguais"]]
   },
