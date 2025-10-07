@@ -16,13 +16,7 @@
   {
     "pergunta": "Questão 3 - Indique as tonsilas apontadas por cada seta.",
     "imagem": "imagens/Questão3.png",
-    "tipo": "objetiva",
-    "alternativas": [
-      "A - Tonsila faríngea; B - Tonsila tubária; C - Tonsilas linguais; D - Tonsilas palatinas",
-      "A - Tonsila palatina; B - Tonsilas linguais; C - Tonsila faríngea; D - Tonsila tubária",
-      "A - Tonsila tubária; B - Tonsila palatina; C - Tonsilas linguais; D - Tonsila faríngea",
-      "A - Tonsila faríngea; B - Tonsila tubária; C - Tonsilas palatinas; D - Tonsilas linguais"
-    ],
+    "tipo": "dissertativa",
     "gabarito": "D"
   },
   {
@@ -49,13 +43,7 @@
   {
     "pergunta": "Questão 7 - Uma criança de 7 anos apresenta linfonodomegalia cervical, febre baixa e fadiga persistente. O hemograma revela leucocitose, com predomínio de células como a mostrada na imagem ao lado. CITE a letra que identifica a principal função desse tipo celular no sistema imune.",
     "imagem": "imagens/Questão7.png",
-    "tipo": "objetiva",
-    "alternativas": [
-      "Fagocitose de microrganismos e restos celulares",
-      "Produção de anticorpos e ativação da resposta imune adaptativa",
-      "Liberação de histamina e heparina em processos alérgicos",
-      "Eliminação de helmintos por grânulos citotóxicos específicos"
-    ],
+    "tipo": "dissertativa",
     "gabarito": "B"
   },
   {
@@ -110,14 +98,8 @@
   {
     "pergunta": "Questão 15 - A formação de granulomas é uma característica típica da inflamação crônica. Qual é a principal função do granuloma?",
     "imagem": "imagens/Questão15.png",
-    "tipo": "objetiva",
-    "alternativas": [
-      "Dissolver proteínas plasmáticas",
-      "Encapsular agentes de difícil eliminação",
-      "Induzir necrose fibrinoide",
-      "Promover angiogênese"
-    ],
-    "gabarito": "B"
+    "tipo": "dissertativa",
+        "gabarito": "B"
   },
   {
     "pergunta": "Questão 16 - Identifique a alteração celular apontada pela seta e o principal órgão acometido por esse tipo de lesão.",
@@ -149,14 +131,8 @@
   },
   {
     "pergunta": "Questão 20 - A tumefação celular com citoplasma claro e vacúolos aquosos é causada principalmente por:",
-    "imagem": "imagens/Questão20.png",
     "tipo": "objetiva",
-    "alternativas": [
-      "Aumento de proteínas citoplasmáticas",
-      "Falha na bomba Na⁺/K⁺-ATPase",
-      "Ativação de lisossomos",
-      "Acúmulo de lipofuscina"
-    ],
+     "tipo": "dissertativa",
     "gabarito": "B"
   }
 ]
