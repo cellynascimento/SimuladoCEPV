@@ -1,5 +1,5 @@
 // ======= CONFIGURAÇÕES =======
-let tempoRestante = 600; // 10 min. (mude para 1800 = 30 min, 3600 = 1h)
+let tempoRestante = 1800; // 30 min. (mude para 1800 = 30 min, 3600 = 1h)
 let cronometroId = null;
 
 // ======= ESTADO =======
