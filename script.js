@@ -1,19 +1,23 @@
-// ======= CONFIGURAÇÃO DO TEMPO =======
-let tempoRestante = 600; // 10 min (mude para 1800 = 30 min, etc.)
+// ======= CONFIG =======
+let tempoRestante = 600; // 10 min
 let cronometroId = null;
 
-// ======= ESTADO =======
 let perguntas = [];
-let idx = 0;                  // índice da questão atual
-let respostas = [];           // respostas do usuário (índice da alternativa ou null)
+let idx = 0;
+let respostas = [];
 
-// ======= UTIL =======
+// ======= UTILS =======
 const $ = (s) => document.querySelector(s);
 const fmt = (t) => {
   const m = Math.floor(t / 60).toString().padStart(2, '0');
   const s = (t % 60).toString().padStart(2, '0');
   return `${m}:${s}`;
 };
+
+function mostrarErro(msg) {
+  const el = $("#start-screen");
+  el.innerHTML = `<p style="color:#b42318;"><strong>Erro:</strong> ${msg}</p>`;
+}
 
 // ======= CRONÔMETRO =======
 function iniciarCronometro() {
@@ -32,9 +36,9 @@ function iniciarCronometro() {
 // ======= RENDER =======
 function render() {
   const q = perguntas[idx];
+  if (!q) { mostrarErro("Não há questão para exibir."); return; }
 
-  // enunciado
-  $("#question-text").textContent = q.pergunta || q.enunciado;
+  $("#question-text").textContent = q.pergunta || q.enunciado || "(sem enunciado)";
 
   // imagem (opcional)
   const img = $("#question-image");
@@ -51,7 +55,11 @@ function render() {
   // alternativas
   const ul = $("#options");
   ul.innerHTML = "";
-  (q.alternativas || []).forEach((alt, i) => {
+  if (!Array.isArray(q.alternativas)) {
+    mostrarErro("A questão não tem 'alternativas' como array.");
+    return;
+  }
+  q.alternativas.forEach((alt, i) => {
     const id = `q${idx}-alt${i}`;
     const li = document.createElement("li");
     li.innerHTML = `
@@ -71,12 +79,13 @@ function render() {
   $("#finish-btn").classList.toggle("hidden", !ultima);
 }
 
+function proxima() { if (idx < perguntas.length - 1) { idx++; render(); } }
+function anterior() { if (idx > 0) { idx--; render(); } }
 
-// ======= FINALIZAÇÃO =======
+// ======= FINAL =======
 function finalizar(mensagem = null) {
   if (cronometroId) clearInterval(cronometroId);
 
-  // Corrigir
   let acertos = 0;
   const review = $("#review");
   review.innerHTML = "";
@@ -91,17 +100,15 @@ function finalizar(mensagem = null) {
       <div><strong>${i + 1})</strong> ${q.pergunta || q.enunciado}</div>
       ${q.imagem ? `<img src="${q.imagem}" alt="Imagem da questão" style="max-width:100%;border-radius:8px;margin:8px 0;">` : ""}
       <div style="color:${user === correta ? '#0b7a41' : '#b42318'}">
-        Sua resposta: ${user != null ? `${String.fromCharCode(65+user)}. ${(q.alternativas||[])[user]}` : "—"}
+        Sua resposta: ${user != null ? `${String.fromCharCode(65+user)}. ${q.alternativas[user]}` : "—"}
       </div>
-      <div class="correct">Correta: ${String.fromCharCode(65+correta)}. ${(q.alternativas||[])[correta]}</div>
+      <div class="correct">Correta: ${String.fromCharCode(65+correta)}. ${q.alternativas[correta]}</div>
       <div class="muted">${q.explicacao || ""}</div>
     `;
     review.appendChild(li);
   });
 
   $("#score").innerHTML = `<h3>Nota: ${acertos}/${perguntas.length}</h3>${mensagem ? `<p>${mensagem}</p>` : ""}`;
-
-  // Trocar telas
   $("#quiz").classList.add("hidden");
   $("#start-screen").classList.add("hidden");
   $("#end-screen").classList.remove("hidden");
@@ -109,20 +116,32 @@ function finalizar(mensagem = null) {
 
 // ======= BOOT =======
 document.addEventListener("DOMContentLoaded", async () => {
-  const res = await fetch("questions.json", { cache: "no-store" });
-  perguntas = await res.json();
-  respostas = Array(perguntas.length).fill(null);
-  idx = 0;
+  try {
+    const res = await fetch("questions.json", { cache: "no-store" });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
 
-  $("#start-btn").addEventListener("click", () => {
-    $("#start-screen").classList.add("hidden");
-    $("#quiz").classList.remove("hidden");
-    iniciarCronometro();
-    render();
-  });
+    if (!Array.isArray(data) || data.length === 0) {
+      mostrarErro("Nenhuma questão encontrada no questions.json.");
+      return;
+    }
 
-  $("#next-btn").addEventListener("click", proxima);
-  $("#prev-btn").addEventListener("click", anterior);
-  $("#finish-btn").addEventListener("click", () => finalizar());
+    perguntas = data;
+    respostas = Array(perguntas.length).fill(null);
+    idx = 0;
+
+    $("#start-btn").addEventListener("click", () => {
+      $("#start-screen").classList.add("hidden");
+      $("#quiz").classList.remove("hidden");
+      iniciarCronometro();
+      render();
+    });
+
+    $("#next-btn").addEventListener("click", proxima);
+    $("#prev-btn").addEventListener("click", anterior);
+    $("#finish-btn").addEventListener("click", () => finalizar());
+
+  } catch (e) {
+    mostrarErro("Falha ao carregar questions.json. Verifique o nome, o caminho e o JSON. " + e.message);
+  }
 });
-
