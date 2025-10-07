@@ -109,23 +109,20 @@ function finalizar(mensagem = null) {
 
 // ======= BOOT =======
 document.addEventListener("DOMContentLoaded", async () => {
-  // Carrega banco
   const res = await fetch("questions.json", { cache: "no-store" });
   perguntas = await res.json();
-
-  // Preparar estado
-  const n = perguntas.length;
-  respostas = Array(n).fill(null);
+  respostas = Array(perguntas.length).fill(null);
   idx = 0;
 
-  // Eventos
   $("#start-btn").addEventListener("click", () => {
     $("#start-screen").classList.add("hidden");
     $("#quiz").classList.remove("hidden");
     iniciarCronometro();
     render();
   });
+
   $("#next-btn").addEventListener("click", proxima);
   $("#prev-btn").addEventListener("click", anterior);
   $("#finish-btn").addEventListener("click", () => finalizar());
 });
+
