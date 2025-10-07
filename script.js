@@ -172,7 +172,7 @@ if (tipo === "dissertativa") {
 
 
 
-    const li = document.createElement("div");
+    const li = document.createElement("li");
     li.innerHTML = `
       <div><strong>${i + 1})</strong> ${q.pergunta || q.enunciado || ""}</div>
       ${temImg}
