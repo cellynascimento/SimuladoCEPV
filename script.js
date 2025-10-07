@@ -32,10 +32,11 @@ function iniciarCronometro() {
 // ======= RENDER =======
 function render() {
   const q = perguntas[idx];
-  $("#progress").textContent = `Questão ${idx + 1} de ${perguntas.length}`;
+
+  // enunciado
   $("#question-text").textContent = q.pergunta || q.enunciado;
 
-  // Imagem (opcional)
+  // imagem (opcional)
   const img = $("#question-image");
   if (q.imagem) {
     img.src = q.imagem;
@@ -47,7 +48,7 @@ function render() {
     img.removeAttribute("alt");
   }
 
-  // Alternativas
+  // alternativas
   const ul = $("#options");
   ul.innerHTML = "";
   (q.alternativas || []).forEach((alt, i) => {
@@ -63,25 +64,13 @@ function render() {
     ul.appendChild(li);
   });
 
-  // Botões
+  // botões
   $("#prev-btn").disabled = idx === 0;
   const ultima = idx === (perguntas.length - 1);
   $("#next-btn").classList.toggle("hidden", ultima);
   $("#finish-btn").classList.toggle("hidden", !ultima);
 }
 
-function proxima() {
-  if (idx < perguntas.length - 1) {
-    idx++;
-    render();
-  }
-}
-function anterior() {
-  if (idx > 0) {
-    idx--;
-    render();
-  }
-}
 
 // ======= FINALIZAÇÃO =======
 function finalizar(mensagem = null) {
