@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Simulado CEP V – Vasos Sanguíneos</title>
   <link rel="stylesheet" href="styles.css" />
-  <script defer src="script.js"></script>
+  <!-- cache-buster opcional para garantir atualização do script -->
+  <script defer src="script.js?v=2"></script>
 </head>
 <body class="container">
   <header class="header">
@@ -13,16 +14,15 @@
     <div id="timer" class="badge">⏱️ Tempo restante: 10:00</div>
   </header>
 
-  <!-- Tela inicial -->
+  <!-- TELA INICIAL (única coisa que aparece ao abrir) -->
   <section id="start-screen">
-    <p>O simulado apresenta <strong>uma questão por vez</strong>. Boa prova!</p>
+    <p>O simulado apresenta <strong>uma questão por vez</strong>. Clique em <strong>Iniciar</strong> para começar.</p>
     <button id="start-btn" class="btn">Iniciar</button>
   </section>
 
-  <!-- Área do quiz (1 questão por vez) -->
+  <!-- QUIZ (fica oculto até clicar em Iniciar) -->
   <section id="quiz" class="hidden">
-    <div id="progress" class="muted">Questão 1 de N</div>
-    <h2 id="question-text">…</h2>
+    <h2 id="question-text">...</h2>
     <img id="question-image" alt="" class="hidden" />
     <ul id="options" class="options"></ul>
     <div class="actions">
@@ -32,7 +32,7 @@
     </div>
   </section>
 
-  <!-- Resultado -->
+  <!-- RESULTADO (também oculto até o fim) -->
   <section id="end-screen" class="hidden">
     <h2>Resultado</h2>
     <div id="score"></div>
