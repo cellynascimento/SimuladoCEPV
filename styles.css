@@ -74,3 +74,13 @@ body {
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
+#resposta-dissertativa {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #e5d5b8;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-size: 10pt;
+  resize: vertical;
+}
+
