@@ -1,136 +1,67 @@
-/* Fonte geral */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
-
+/* Importante: define a fonte e o fundo */
 body {
   font-family: 'Montserrat', sans-serif;
-  background-color: #fdf7f0; /* bege bem claro */
-  color: #222;
+  background-color: #fdf7f0;
+  color: #333;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Centraliza o conteúdo */
+.container {
+  width: 100%;
+  max-width: 800px;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Retângulo de conteúdo */
+.content {
+  background: #fffaf2;
+  border: 1px solid #e5d5b8;
+  border-radius: 8px;
+  padding: 30px;
+  margin: 20px 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  text-align: justify;
+  font-size: 10pt;
   line-height: 1.6;
 }
 
-/* Contêiner central */
-.container {
-  max-width: 800px;          /* impede de ocupar toda a tela */
-  margin: 40px auto;
-  background: #fffdf8;       /* bege ainda mais suave dentro do retângulo */
-  border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-  padding: 30px 40px;
-}
-
-/* Cabeçalho e título */
-.header {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
+/* Cabeçalho */
 .header h1 {
-  font-size: 26pt;
-  margin: 0;
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  margin-top: 20px;
 }
 
-.badge {
-  display: inline-block;
-  margin-top: 8px;
-  background: #fff1d6;
-  color: #5b4500;
-  padding: 8px 12px;
-  border-radius: 999px;
-  font-weight: 600;
-  font-size: 11pt;
-}
-
-/* Texto geral */
-p, li, label, button, input {
-  font-size: 10pt;
-  text-align: justify;
-}
-
-/* Seções (tela inicial, quiz e resultado) */
-section {
-  margin-top: 25px;
-}
-
-/* Questões e alternativas */
-.options {
-  list-style: none;
-  padding: 0;
-  margin: 20px 0;
-  display: grid;
-  gap: 12px;
-}
-
-.options li {
-  background: #fff9ed;
-  border: 1px solid #f0e4cc;
-  border-radius: 8px;
-  padding: 12px 14px;
-  text-align: justify;
-  transition: background 0.2s;
-}
-
-.options li:hover {
-  background: #fff3d9;
-}
-
-/* Botões */
+/* Botão */
 .btn {
   display: inline-block;
-  background: #f8d57a;
+  background-color: #f8d57a;
   color: #333;
   font-weight: 600;
   border: none;
   border-radius: 6px;
   padding: 10px 18px;
   cursor: pointer;
-  transition: background 0.2s;
   text-decoration: none;
-}
-
-.btn:hover {
-  background: #ffd66c;
-}
-
-.btn.outline {
-  background: transparent;
-  border: 1.5px solid #f8d57a;
-}
-
-.btn.primary {
-  background: #ffca3a;
-}
-
-.actions {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
+  transition: background 0.2s;
   margin-top: 20px;
 }
 
-/* Resultado */
-#end-screen {
-  text-align: center;
+.btn:hover {
+  background-color: #ffd66c;
 }
 
-#score {
-  font-size: 14pt;
-  font-weight: 700;
-  color: #4a3b00;
-}
-
-.correct {
-  color: #0b7a41;
-  font-weight: 600;
-}
-
-.muted {
-  color: #666;
+/* Rodapé */
+.footer {
   font-size: 9pt;
-  margin-top: 6px;
-}
-
-.hidden {
-  display: none;
+  margin: 30px 0 10px 0;
+  color: #666;
 }
