@@ -111,13 +111,15 @@ body {
 }
 
 .gabarito {
-  text-align: justify;
-  color: #333;
+ text-align: justify;     /* alinha dos dois lados */
+  margin-top: 14px;        /* espaço entre a pergunta/imagem e o gabarito */
+  margin-bottom: 32px;     /* espaço depois do gabarito */
+  line-height: 1.6;
   font-weight: 700;
-  margin-top: 10px;
-  margin-bottom: 35px; /* espaço após o gabarito */
+  color: #333;
   font-family: 'Montserrat', sans-serif;
 }
+
 
 /* ===== TÍTULOS ===== */
 h1, h2, h3 {
