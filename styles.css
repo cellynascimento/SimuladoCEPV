@@ -95,3 +95,11 @@ body {
 .badge { background: #f5f5ff; padding: 6px 10px; border-radius: 999px; }
 .actions { margin-top: 12px; display: flex; gap: 8px; }
 
+.hidden { display: none; }
+.header { position: sticky; top: 0; background: #fff; border-bottom: 1px solid #f1f1f1; margin-bottom: 12px; padding-bottom: 8px; display:flex; justify-content:space-between; align-items:center; }
+.badge { background: #f5f5ff; padding: 6px 10px; border-radius: 999px; }
+.options { list-style: none; padding: 0; margin: 16px 0; display: grid; gap: 10px; }
+.options li { border: 1px solid #e5e7eb; border-radius: 8px; padding: 10px 12px; display: flex; gap: 10px; align-items: center; }
+.actions { margin-top: 12px; display: flex; gap: 8px; justify-content: center; }
+
+
