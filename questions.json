@@ -13,17 +13,12 @@
     "gabarito": "Letra A - Corpúsculo de Hassall.",
     "aceitaveis": [["a", "corpusculo", "hassall", "timo"]]
   },
-  {
+    {
     "pergunta": "Questão 3 - Indique as tonsilas apontadas por cada seta.",
     "imagem": "imagens/Questão3.png",
     "tipo": "objetiva",
-    "alternativas": [
-      "A - Tonsila faríngea; B - Tonsila tubária; C - Tonsilas linguais; D - Tonsilas palatinas",
-      "A - Tonsila palatina; B - Tonsilas linguais; C - Tonsila faríngea; D - Tonsila tubária",
-      "A - Tonsila tubária; B - Tonsila palatina; C - Tonsilas linguais; D - Tonsila faríngea",
-      "A - Tonsila faríngea; B - Tonsila tubária; C - Tonsilas palatinas; D - Tonsilas linguais"
-    ],
-    "gabarito": "D"
+    "gabarito": "A - Tonsila faríngea; B - Tonsila tubária; C - Tonsilas palatinas; D - Tonsilas linguais",
+    "aceitaveis": [[, "tonsila", "tonsilas", "faringea", "tubaria", "palatinas", "linguais"]]
   },
   {
     "pergunta": "Questão 4 - Nomeie as regiões histológicas numeradas (1 e 2).",
