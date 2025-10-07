@@ -122,34 +122,27 @@ function finalizar(mensagem = null) {
   const review = $("#review");
   review.innerHTML = "";
 
+  
   perguntas.forEach((q, i) => {
     const tipo = (q.tipo || "").toLowerCase();
     const temImg = q.imagem ? `<img src="${q.imagem}" alt="Imagem da questão" style="max-width:100%;border-radius:8px;margin:8px 0;">` : "";
     let blocoUsuario = "";
     let blocoCorreta = "";
 
-    if (tipo === "dissertativa") {
-      const resp = (typeof respostas[i] === "string" && respostas[i].trim().length) ? respostas[i].trim() : "—";
-      blocoUsuario = `<div><strong>Sua resposta:</strong> ${escapeHtml(resp)}</div>`;
-      blocoCorreta = `<div class="correct"><strong>Gabarito:</strong> ${escapeHtml(q.gabarito || "")}</div>`;
-    } else {
-      const user = typeof respostas[i] === "number" ? respostas[i] : null;
-      const correta = typeof q.correta === "number" ? q.correta : null;
-      const certo = (user !== null && correta !== null && user === correta);
-      if (certo) acertos++;
+ if (tipo === "dissertativa") {
+  const resp = (typeof respostas[i] === "string" && respostas[i].trim().length) ? respostas[i].trim() : "—";
 
-      blocoUsuario = `
-        <div style="color:${certo ? '#0b7a41' : '#b42318'}">
-          Sua resposta: ${user != null ? `${String.fromCharCode(65+user)}. ${(q.alternativas||[])[user]}` : "—"}
-        </div>
-      `;
-      blocoCorreta = `
-        <div class="correct">
-          Correta: ${correta != null ? `${String.fromCharCode(65+correta)}. ${(q.alternativas||[])[correta]}` : "(não definida no JSON)"}
-        </div>
-        ${q.gabarito ? `<div class="muted">${escapeHtml(q.gabarito)}</div>` : ""}
-      `;
-    }
+  // Se a questão tiver palavras-chave aceitáveis, corrige automaticamente
+  let acertou = false;
+  if (Array.isArray(q.aceitaveis) && q.aceitaveis.length > 0) {
+    acertou = confereAceitaveis(resp, q.aceitaveis);
+  }
+  if (acertou) acertos++;
+
+  blocoUsuario = `<div style="color:${acertou ? '#0b7a41' : '#b42318'}"><strong>Sua resposta:</strong> ${escapeHtml(resp)}</div>`;
+  blocoCorreta = `<div class="correct"><strong>Gabarito:</strong> ${escapeHtml(q.gabarito || "")}</div>`;
+}
+
 
     const li = document.createElement("li");
     li.innerHTML = `
@@ -163,7 +156,7 @@ function finalizar(mensagem = null) {
   });
 
   $("#score").innerHTML = `
-    <h3>Nota (objetivas): ${acertos}/${perguntas.filter(q => (q.tipo || "").toLowerCase() !== "dissertativa").length}</h3>
+    <h3>Nota: ${acertos}/${perguntas.filter(q => (q.tipo || "").toLowerCase() !== "dissertativa").length}</h3>
     ${mensagem ? `<p>${mensagem}</p>` : ""}
   `;
 
@@ -180,6 +173,30 @@ function escapeHtml(str) {
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#039;");
+}
+// Normaliza: minúsculas e sem acentos
+function normalizar(txt) {
+  return String(txt || "")
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, ""); // remove acentos
+}
+
+// Confere grupos de palavras-chave aceitáveis
+// Cada item de "aceitaveis" pode ser:
+// - um array ["palavra1", "palavra2", ...] => TODAS devem aparecer
+// - ou uma string "palavra" => basta aparecer
+function confereAceitaveis(respostaUsuario, aceitaveis) {
+  if (!respostaUsuario || !Array.isArray(aceitaveis) || aceitaveis.length === 0) return false;
+  const resp = normalizar(respostaUsuario);
+
+  return aceitaveis.some(grupo => {
+    if (Array.isArray(grupo)) {
+      return grupo.every(palavra => resp.includes(normalizar(palavra)));
+    } else {
+      return resp.includes(normalizar(grupo));
+    }
+  });
 }
 
 // ======= INICIALIZAÇÃO =======
