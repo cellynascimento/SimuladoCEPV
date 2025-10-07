@@ -1,159 +1,162 @@
 [
   {
-    "pergunta": "Identifique o número e cite o nome da estrutura que faz parte do estroma, responsável pela distribuição da vascularização do órgão representado na imagem.",
+    "pergunta": "Questão 1 - Identifique o número e cite o nome da estrutura que faz parte do estroma, responsável pela distribuição da vascularização do órgão representado na imagem.",
     "imagem": "imagens/Questão1.png",
     "tipo": "dissertativa",
     "gabarito": "Número 3 - Trabécula esplênica. Baço.",
     "aceitaveis": [["3", "trabecula", "esplen", "baco"]]
   },
   {
-    "pergunta": "Identifique a letra e cite o nome da estrutura formada por várias células presente no parênquima do timo que representa um marcador histológico desse órgão.",
+    "pergunta": "Questão 2 - Identifique a letra e cite o nome da estrutura formada por várias células presente no parênquima do timo que representa um marcador histológico desse órgão.",
     "imagem": "imagens/Questão2.png",
     "tipo": "dissertativa",
     "gabarito": "Letra A - Corpúsculo de Hassall.",
     "aceitaveis": [["a", "corpusculo", "hassall", "timo"]]
   },
   {
-    "pergunta": "Indique as tonsilas apontadas por cada seta.",
+    "pergunta": "Questão 3 - Indique as tonsilas apontadas por cada seta.",
     "imagem": "imagens/Questão3.png",
-    "tipo": "dissertativa",
-    "gabarito": "A - tonsila faríngea; B - tonsila tubária; C - tonsila palatina; D - tonsila lingual"
+    "tipo": "objetiva",
+    "alternativas": [
+      "A - Tonsila faríngea; B - Tonsila tubária; C - Tonsilas linguais; D - Tonsilas palatinas",
+      "A - Tonsila palatina; B - Tonsilas linguais; C - Tonsila faríngea; D - Tonsila tubária",
+      "A - Tonsila tubária; B - Tonsila palatina; C - Tonsilas linguais; D - Tonsila faríngea",
+      "A - Tonsila faríngea; B - Tonsila tubária; C - Tonsilas palatinas; D - Tonsilas linguais"
+    ],
+    "gabarito": "D"
   },
   {
-    "pergunta": "Nomeie as regiões histológicas numeradas (1 e 2).",
+    "pergunta": "Questão 4 - Nomeie as regiões histológicas numeradas (1 e 2).",
     "imagem": "imagens/Questão4.png",
     "tipo": "dissertativa",
     "gabarito": "1 - Córtex tímico e 2 - Medula tímica.",
     "aceitaveis": [["1", "cortex", "2", "medula", "timo"]]
   },
   {
-    "pergunta": "Indique o órgão apontado pela letra A e sua vascularização.",
+    "pergunta": "Questão 5 - Indique o órgão apontado pela letra A e sua vascularização.",
     "imagem": "imagens/Questão5.png",
     "tipo": "dissertativa",
     "gabarito": "Timo e artérias e veias tímicas.",
     "aceitaveis": [["timo", "arteria", "veia", "timic"]]
   },
   {
-    "pergunta": "Identifique a veia apontada pela letra D.",
+    "pergunta": "Questão 6 - Identifique a veia apontada pela letra D.",
     "imagem": "imagens/Questão6.png",
     "tipo": "dissertativa",
     "gabarito": "Veia braquial.",
     "aceitaveis": [["braquial", "veia"]]
   },
-{
-  "pergunta": "Uma criança de 7 anos apresenta linfonodomegalia cervical, febre baixa e fadiga persistente. O hemograma revela leucocitose, com predomínio de células como a mostrada na imagem ao lado. CITE a letra que identifica a principal função desse tipo celular no sistema imune.",
-  "imagem": "imagens/Questão7.png",
-  "tipo": "dissertativa",
-  "gabarito": "Produção de anticorpos e ativação da resposta imune adaptativa",
-  "aceitaveis": [
-    ["produção", "anticorpos"],
-    ["ativação", "imune", "adaptativa"],
-    "ativação da resposta imune adaptativa",
-    "produção de anticorpos"
-  ]
-}
-
   {
-    "pergunta": "CITE a veia apontada pela seta preta maior, incluindo sua lateralidade.",
+    "pergunta": "Questão 7 - Uma criança de 7 anos apresenta linfonodomegalia cervical, febre baixa e fadiga persistente. O hemograma revela leucocitose, com predomínio de células como a mostrada na imagem ao lado. CITE a letra que identifica a principal função desse tipo celular no sistema imune.",
+    "imagem": "imagens/Questão7.png",
+    "tipo": "objetiva",
+    "alternativas": [
+      "Fagocitose de microrganismos e restos celulares",
+      "Produção de anticorpos e ativação da resposta imune adaptativa",
+      "Liberação de histamina e heparina em processos alérgicos",
+      "Eliminação de helmintos por grânulos citotóxicos específicos"
+    ],
+    "gabarito": "B"
+  },
+  {
+    "pergunta": "Questão 8 - CITE a veia apontada pela seta preta maior, incluindo sua lateralidade.",
     "imagem": "imagens/Questão8.png",
     "tipo": "dissertativa",
     "gabarito": "Veia ilíaca comum direita.",
     "aceitaveis": [["veia", "iliac", "direit"]]
   },
   {
-    "pergunta": "CITE a artéria apontada pela seta.",
+    "pergunta": "Questão 9 - CITE a artéria apontada pela seta.",
     "imagem": "imagens/Questão9.png",
     "tipo": "dissertativa",
     "gabarito": "Artéria basilar.",
     "aceitaveis": [["arteria", "basilar"]]
   },
   {
-    "pergunta": "Identifique as veias apontadas pelas setas e qual estrutura a anastomose das duas forma.",
+    "pergunta": "Questão 10 - Identifique as veias apontadas pelas setas e qual estrutura a anastomose das duas forma.",
     "imagem": "imagens/Questão10.png",
     "tipo": "dissertativa",
     "gabarito": "Veia esplênica e veia mesentérica superior - veia porta hepática.",
     "aceitaveis": [["veia", "esplen", "mesenteric", "porta", "hepat"]]
   },
   {
-    "pergunta": "Identifique o tipo celular destacado e em qual tipo de reação inflamatória ele está presente.",
+    "pergunta": "Questão 11 - Identifique o tipo celular destacado e em qual tipo de reação inflamatória ele está presente.",
     "imagem": "imagens/Questão11.png",
     "tipo": "dissertativa",
     "gabarito": "Célula gigante de Langhans. Inflamação granulomatosa crônica.",
     "aceitaveis": [["langhans", "granulomat", "cron"]]
   },
   {
-    "pergunta": "Identifique o tipo de infiltrado inflamatório predominante na miocardite chagásica.",
+    "pergunta": "Questão 12 - Identifique o tipo de infiltrado inflamatório predominante na miocardite chagásica.",
     "imagem": "imagens/Questão12.png",
     "tipo": "dissertativa",
     "gabarito": "Infiltrado inflamatório mononuclear.",
     "aceitaveis": [["mononuclear", "infiltrad", "inflamator"]]
   },
   {
-    "pergunta": "Dentre as diferentes lâminas mostradas acima, identifique qual numeração representa um processo inflamatório crônico.",
+    "pergunta": "Questão 13 - Dentre as diferentes lâminas mostradas acima, identifique qual numeração representa um processo inflamatório crônico.",
     "imagem": "imagens/Questão13.png",
     "tipo": "dissertativa",
     "gabarito": "Letra D.",
     "aceitaveis": [["d", "cron"]]
   },
   {
-    "pergunta": "Um paciente apresenta dor intensa, calor, rubor e edema em torno de uma ferida infectada no braço há 24 horas. Ao exame histológico da área, nota-se infiltrado celular predominante. Qual é a célula predominante na inflamação aguda inicial?",
-        "tipo": "dissertativa",
+    "pergunta": "Questão 14 - Um paciente apresenta dor intensa, calor, rubor e edema em torno de uma ferida infectada no braço há 24 horas. Ao exame histológico da área, nota-se infiltrado celular predominante. Qual é a célula predominante na inflamação aguda inicial?",
+    "imagem": "imagens/Questão14.png",
+    "tipo": "dissertativa",
     "gabarito": "Neutrófilos.",
     "aceitaveis": [["neutrofil"]]
   },
-{
-  "pergunta": "A formação de granulomas é uma característica típica da inflamação crônica. Qual é a principal função do granuloma?",
-  "tipo": "dissertativa",
-  "gabarito": "Encapsular agentes de difícil eliminação",
-  "aceitaveis": [
-    ["encapsular", "agentes"],
-    ["encapsular", "difícil", "eliminação"],
-    "encapsular agentes de difícil eliminação",
-    "isolamento de agentes difíceis de eliminar"
-  ]
-}
-
   {
-    "pergunta": "Identifique a alteração celular apontada pela seta e o principal órgão acometido por esse tipo de lesão.",
+    "pergunta": "Questão 15 - A formação de granulomas é uma característica típica da inflamação crônica. Qual é a principal função do granuloma?",
+    "imagem": "imagens/Questão15.png",
+    "tipo": "objetiva",
+    "alternativas": [
+      "Dissolver proteínas plasmáticas",
+      "Encapsular agentes de difícil eliminação",
+      "Induzir necrose fibrinoide",
+      "Promover angiogênese"
+    ],
+    "gabarito": "B"
+  },
+  {
+    "pergunta": "Questão 16 - Identifique a alteração celular apontada pela seta e o principal órgão acometido por esse tipo de lesão.",
     "imagem": "imagens/Questão16.png",
     "tipo": "dissertativa",
     "gabarito": "Degeneração gordurosa (esteatose) no fígado.",
     "aceitaveis": [["gorduros", "esteatos", "figado"]]
   },
   {
-    "pergunta": "O material corado de rosa intenso e aspecto vítreo no citoplasma indica qual tipo de degeneração? Considere a seta menor.",
+    "pergunta": "Questão 17 - O material corado de rosa intenso e aspecto vítreo no citoplasma indica qual tipo de degeneração? Considere a seta menor.",
     "imagem": "imagens/Questão17.png",
     "tipo": "dissertativa",
     "gabarito": "Degeneração hialina.",
     "aceitaveis": [["hialin"]]
   },
   {
-    "pergunta": "A lâmina mostra acúmulo de qual substância no citoplasma?",
+    "pergunta": "Questão 18 - A lâmina mostra acúmulo de qual substância no citoplasma?",
     "imagem": "imagens/Questão18.png",
     "tipo": "dissertativa",
     "gabarito": "Glicogênio.",
     "aceitaveis": [["glicog"]]
   },
   {
-    "pergunta": "Identifique a morfologia bacteriana e um exemplo de bactéria com esse padrão.",
+    "pergunta": "Questão 19 - Identifique a morfologia bacteriana e um exemplo de bactéria com esse padrão.",
     "imagem": "imagens/Questão19.png",
     "tipo": "dissertativa",
     "gabarito": "Cocos em cadeia. Streptococcus pyogenes.",
     "aceitaveis": [["coco", "cadeia", "streptococ"]]
   },
-{
-  "pergunta": "A tumefação celular com citoplasma claro e vacúolos aquosos é causada principalmente por:",
-  "tipo": "dissertativa",
-  "gabarito": "Falha na bomba Na⁺/K⁺-ATPase (bomba de sódio e potássio)",
-  "aceitaveis": [
-    ["falha", "bomba", "na", "k"],
-    ["bomba", "sódio", "potássio"],
-    ["falha", "bomba", "sódio", "potássio"],
-    ["desequilíbrio", "osmótico"],
-    "falha na bomba de sódio e potássio",
-    "falha na bomba na k",
-    "desequilíbrio osmótico"
-  ]
-}
-
+  {
+    "pergunta": "Questão 20 - A tumefação celular com citoplasma claro e vacúolos aquosos é causada principalmente por:",
+    "imagem": "imagens/Questão20.png",
+    "tipo": "objetiva",
+    "alternativas": [
+      "Aumento de proteínas citoplasmáticas",
+      "Falha na bomba Na⁺/K⁺-ATPase",
+      "Ativação de lisossomos",
+      "Acúmulo de lipofuscina"
+    ],
+    "gabarito": "B"
+  }
 ]
