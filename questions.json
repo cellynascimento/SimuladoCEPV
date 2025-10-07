@@ -46,18 +46,18 @@
     "gabarito": "Veia braquial.",
     "aceitaveis": [["braquial", "veia"]]
   },
-  {
-    "pergunta": "Questão 7 - Uma criança de 7 anos apresenta linfonodomegalia cervical, febre baixa e fadiga persistente. O hemograma revela leucocitose, com predomínio de células como a mostrada na imagem ao lado. CITE a letra que identifica a principal função desse tipo celular no sistema imune.",
-    "imagem": "imagens/Questão7.png",
-    "tipo": "objetiva",
-    "alternativas": [
-      "Fagocitose de microrganismos e restos celulares",
-      "Produção de anticorpos e ativação da resposta imune adaptativa",
-      "Liberação de histamina e heparina em processos alérgicos",
-      "Eliminação de helmintos por grânulos citotóxicos específicos"
-    ],
-    "gabarito": "B"
-  },
+ {
+  "pergunta": "Uma criança de 7 anos apresenta linfonodomegalia cervical, febre baixa e fadiga persistente. O hemograma revela leucocitose, com predomínio de células como a mostrada na imagem ao lado. CITE a letra que identifica a principal função desse tipo celular no sistema imune.",
+  "imagem": "imagens/Questão7.png",
+  "tipo": "dissertativa",
+  "gabarito": "Produção de anticorpos e ativação da resposta imune adaptativa",
+  "aceitaveis": [
+    ["produção", "anticorpos"],
+    ["ativação", "imune", "adaptativa"],
+    "ativação da resposta imune adaptativa",
+    "produção de anticorpos"
+  ]
+}
   {
     "pergunta": "Questão 8 - CITE a veia apontada pela seta preta maior, incluindo sua lateralidade.",
     "imagem": "imagens/Questão8.png",
