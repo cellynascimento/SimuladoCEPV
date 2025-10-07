@@ -1,0 +1,35 @@
+[
+  {
+    "enunciado": "A camada íntima dos vasos sanguíneos é composta principalmente por:",
+    "alternativas": [
+      "Endotélio, lâmina basal e tecido subendotelial",
+      "Músculo liso e fibras elásticas concentradas",
+      "Tecido conjuntivo denso não modelado",
+      "Adventícia e vasa vasorum"
+    ],
+    "correta": 0,
+    "explicacao": "A íntima é a camada mais interna: endotélio (epitélio simples pavimentoso), lâmina basal e camada subendotelial."
+  },
+  {
+    "enunciado": "Qual característica diferencia artérias elásticas das musculares?",
+    "alternativas": [
+      "Presença de múltiplas lâminas elásticas fenestradas na média",
+      "Ênfase em camadas de músculo liso na adventícia",
+      "Ausência de endotélio funcional",
+      "Presença de vênulas pós-capilares na íntima"
+    ],
+    "correta": 0,
+    "explicacao": "Artérias elásticas (p. ex., aorta) têm muitas lâminas elásticas na túnica média para amortecer a pressão sistólica."
+  },
+  {
+    "enunciado": "Os capilares contínuos caracterizam-se por:",
+    "alternativas": [
+      "Fenestrações amplas sem diafragma",
+      "Junções intercelulares contínuas e lâmina basal contínua",
+      "Grandes poros e lâmina basal descontínua",
+      "Células musculares lisas na parede"
+    ],
+    "correta": 1,
+    "explicacao": "O endotélio tem junções firmes e a lâmina basal é contínua (típicos de músculo, SNC, pulmão)."
+  }
+]
