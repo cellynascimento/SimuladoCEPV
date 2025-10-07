@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Simulado CEP V – Vasos Sanguíneos</title>
   <link rel="stylesheet" href="styles.css" />
-  <!-- cache-buster opcional para garantir atualização do script -->
-  <script defer src="script.js?v=2"></script>
+  <!-- cache-buster pra garantir que pegue o JS novo -->
+  <script defer src="script.js?v=3"></script>
 </head>
 <body class="container">
   <header class="header">
@@ -14,7 +14,7 @@
     <div id="timer" class="badge">⏱️ Tempo restante: 10:00</div>
   </header>
 
-  <!-- TELA INICIAL (única coisa que aparece ao abrir) -->
+  <!-- TELA INICIAL (aparece sozinha ao abrir) -->
   <section id="start-screen">
     <p>O simulado apresenta <strong>uma questão por vez</strong>. Clique em <strong>Iniciar</strong> para começar.</p>
     <button id="start-btn" class="btn">Iniciar</button>
@@ -32,7 +32,7 @@
     </div>
   </section>
 
-  <!-- RESULTADO (também oculto até o fim) -->
+  <!-- RESULTADO (só aparece no fim) -->
   <section id="end-screen" class="hidden">
     <h2>Resultado</h2>
     <div id="score"></div>
