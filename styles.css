@@ -120,6 +120,15 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
+.correct {
+ text-align: justify;     /* alinha dos dois lados */
+  margin-top: 14px;        /* espaço entre a pergunta/imagem e o gabarito */
+  margin-bottom: 32px;     /* espaço depois do gabarito */
+  line-height: 1.6;
+  font-weight: 700;
+  color: #333;
+  font-family: 'Montserrat', sans-serif;
+}
 
 /* ===== TÍTULOS ===== */
 h1, h2, h3 {
@@ -143,6 +152,7 @@ body {
   padding: 20px 25px;
   margin: 25px auto;
   width: 80%;
+  text-align: justify;
 }
 
 
