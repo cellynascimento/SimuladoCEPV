@@ -1,5 +1,6 @@
-// ======= CONFIGURAÇÕES =======
-let tempoRestante = 1800; // 30 min. (mude para 1800 = 30 min, 3600 = 1h)
+const DURACAO_PADRAO = 1800; // 30 min em segundos
+
+let tempoRestante = DURACAO_PADRAO;
 let cronometroId = null;
 
 // ======= ESTADO =======
@@ -257,6 +258,12 @@ document.addEventListener("DOMContentLoaded", async () => {
   } catch (e) {
     mostrarErro("Falha ao carregar questions.json. Verifique o nome, o caminho e o formato. " + e.message);
   }
+
+  document.addEventListener('DOMContentLoaded', () => {
+  const timer = document.querySelector('#timer');
+  if (timer) timer.textContent = `Tempo restante: ${fmt(DURACAO_PADRAO)}`;
 });
+
+
 
 
