@@ -65,3 +65,14 @@ body {
   margin: 30px 0 10px 0;
   color: #666;
 }
+
+#resposta-dissertativa {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #e5d5b8;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-size: 10pt;
+  resize: vertical;
+}
+
