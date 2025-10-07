@@ -1,19 +1,3 @@
-// ===== ROTEIROS / FAIXAS =====
-const ROTEIROS = [
-  { nome: "Roteiro 1", ini: 1,  fim: 5  },
-  { nome: "Roteiro 2", ini: 6,  fim: 10 },
-  { nome: "Roteiro 3", ini: 11, fim: 15 },
-  { nome: "Roteiro 4", ini: 16, fim: 20 },
-];
-
-function idxRoteiroFromNumeroQuestao(n) {
-  for (let i = 0; i < ROTEIROS.length; i++) {
-    if (n >= ROTEIROS[i].ini && n <= ROTEIROS[i].fim) return i;
-  }
-  return -1;
-}
-
-
 const DURACAO_PADRAO = 1800; // 30 min em segundos
 
 let tempoRestante = DURACAO_PADRAO;
@@ -274,12 +258,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   } catch (e) {
     mostrarErro("Falha ao carregar questions.json. Verifique o nome, o caminho e o formato. " + e.message);
   }
-
-  document.addEventListener('DOMContentLoaded', () => {
-  const timer = document.querySelector('#timer');
-  if (timer) timer.textContent = `Tempo restante: ${fmt(DURACAO_PADRAO)}`;
 });
-
-
 
 
