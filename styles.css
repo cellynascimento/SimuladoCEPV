@@ -84,3 +84,63 @@ body {
   resize: vertical;
 }
 
+/* ===== ESTILO DAS QUESTÕES ===== */
+.pergunta {
+  text-align: justify;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 15px; /* espaço entre comando e imagem */
+  color: #2c2c2c;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.imagem {
+  display: block;
+  margin: 10px auto 25px auto; /* centraliza e espaça */
+  max-width: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.resposta {
+  text-align: justify;
+  color: #a94442;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 10px;
+}
+
+.gabarito {
+  text-align: justify;
+  color: #333;
+  font-weight: 700;
+  margin-top: 10px;
+  margin-bottom: 35px; /* espaço após o gabarito */
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* ===== TÍTULOS ===== */
+h1, h2, h3 {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  color: #1c1c1c;
+}
+
+body {
+  background-color: #fdf8f3;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10pt;
+  padding: 20px;
+}
+
+/* ===== BLOCO DAS QUESTÕES ===== */
+.questao {
+  background: #fffdf9;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+  padding: 20px 25px;
+  margin: 25px auto;
+  width: 80%;
+}
+
+
