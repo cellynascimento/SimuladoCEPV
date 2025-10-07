@@ -132,7 +132,7 @@ body {
 
 /* ===== TÍTULOS ===== */
 h1, h2, h3 {
-  text-align: center;
+  text-align: justify;
   font-family: 'Montserrat', sans-serif;
   color: #1c1c1c;
 }
