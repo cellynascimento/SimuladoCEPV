@@ -96,9 +96,10 @@ function render() {
         <input type="radio" id="${id}" name="q${idx}" ${respostas[idx] === i ? "checked" : ""}>
         <label for="${id}"><strong>${String.fromCharCode(65+i)}.</strong> ${alt}</label>
       `;
-      li.querySelector("input").addEventListener("change", () => {
-        respostas[idx] = i;
-      });
+input.addEventListener("change", () => {
+  respostas[idxPergunta] = iAlternativa; // salva o índice (0..n)
+});
+
       ul.appendChild(li);
     });
   }
@@ -192,25 +193,51 @@ function finalizar(mensagem = null) {
   const review = $("#review");
   review.innerHTML = "";
 
-  perguntas.forEach((q, i) => {
-    const tipo = (q.tipo || "").toLowerCase();
-    const temImg = q.imagem ? `<img src="${q.imagem}" alt="Imagem da questão" style="max-width:100%;border-radius:8px;margin:8px 0;">` : "";
-    let blocoUsuario = "";
-    let blocoCorreta = "";
+perguntas.forEach((q, i) => {
+  const tipo = (q.tipo || "").toLowerCase();
+  let blocoUsuario = "";
+  let blocoCorreta = "";
 
-if (tipo === "dissertativa") {
-  const resp = (typeof respostas[i] === "string" && respostas[i].trim().length) ? respostas[i].trim() : "—";
+  if (tipo === "dissertativa") {
+    const resp = (typeof respostas[i] === "string" && respostas[i].trim().length) ? respostas[i].trim() : "—";
 
-  // Se a questão tiver palavras-chave aceitáveis, corrige automaticamente
-  let acertou = false;
-  if (Array.isArray(q.aceitaveis) && q.aceitaveis.length > 0) {
-    acertou = confereAceitaveis(resp, q.aceitaveis);
+    // se tiver palavras-chave aceitáveis, corrige automaticamente
+    let acertou = false;
+    if (Array.isArray(q.aceitaveis) && q.aceitaveis.length > 0) {
+      acertou = confereAceitaveis(resp, q.aceitaveis);
+    }
+    if (acertou) acertos++;
+
+    blocoUsuario = `<div style="color:${acertou ? '#0b7a41' : '#b42318'}"><strong>Sua resposta:</strong> ${escapeHtml(resp)}</div>`;
+    blocoCorreta = `<div class="correct"><strong>Gabarito:</strong> ${escapeHtml(q.gabarito || "")}</div>`;
+
+  } else if (Array.isArray(q.alternativas)) {
+    // OBJETIVA
+    const correctIdx = resolveGabaritoIndex(q);
+    const respIdx = resolveRespostaIndex(q, respostas[i]);
+
+    const acertou = (correctIdx >= 0 && respIdx === correctIdx);
+    if (acertou) acertos++;
+
+    const respLabel = (respIdx >= 0)
+      ? `${letraFromIndex(respIdx)} - ${escapeHtml(q.alternativas[respIdx])}`
+      : "—";
+
+    const gabaritoLabel = (correctIdx >= 0)
+      ? `${letraFromIndex(correctIdx)} - ${escapeHtml(q.alternativas[correctIdx])}`
+      : escapeHtml(q.gabarito || "");
+
+    blocoUsuario = `<div style="color:${acertou ? '#0b7a41' : '#b42318'}"><strong>Sua resposta:</strong> ${respLabel}</div>`;
+    blocoCorreta = `<div class="correct"><strong>Gabarito:</strong> ${gabaritoLabel}</div>`;
   }
-  if (acertou) acertos++;
 
-  blocoUsuario = `<div style="color:${acertou ? '#0b7a41' : '#b42318'}"><strong>Sua resposta:</strong> ${escapeHtml(resp)}</div>`;
-  blocoCorreta = `<div class="correct"><strong>Gabarito:</strong> ${escapeHtml(q.gabarito || "")}</div>`;
-}
+  // aqui você já deve estar montando o <li> da revisão:
+  li.innerHTML = `${escapeHtml(q.pergunta)}
+    ${q.imagem ? `<div class="img-wrap"><img src="${escapeHtml(q.imagem)}" class="imagem" /></div>` : ""}
+    ${blocoUsuario}
+    ${blocoCorreta}`;
+});
+
 
 
 
