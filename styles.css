@@ -75,4 +75,23 @@ body {
   font-size: 10pt;
   resize: vertical;
 }
+/* já deve existir, mas garanta: */
+.hidden { display: none; }
+.muted { color: #667085; }
+.options { list-style: none; padding: 0; margin: 16px 0; display: grid; gap: 10px; }
+.options li { border: 1px solid #e5e7eb; border-radius: 8px; padding: 10px 12px; display: flex; gap: 10px; align-items: center; }
+
+/* timer sempre visível no topo */
+.header {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  z-index: 10;
+  border-bottom: 1px solid #f1f1f1;
+}
+.badge { background: #f5f5ff; padding: 6px 10px; border-radius: 999px; }
+.actions { margin-top: 12px; display: flex; gap: 8px; }
 
